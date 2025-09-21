@@ -1,6 +1,8 @@
 
 def stock_picker(prices = nil)
   
+  return "please enter a parameter of an array of daily prices" if prices.nil?
+  return "Please enter valid array e.g [1,3,4,9]" unless prices.is_a?(Array) 
 
 
 
