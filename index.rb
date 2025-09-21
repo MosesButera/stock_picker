@@ -13,6 +13,15 @@ def stock_picker(prices = nil)
 
     (1...prices.length).map do |day|
       
+      current_price = prices[day]
+
+      #Track the min_price or best buy_price candidate
+      
+      if current_price < min_price
+        min_price = current_price
+        buy_price = day
+      end
+      
 
 
 
