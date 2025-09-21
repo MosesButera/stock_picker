@@ -31,11 +31,12 @@ def stock_picker(prices = nil)
         max_profit = profit
         sell_price = day
       end
-      
+
       if max_profit <= 0
         return "No profitable trades possible"    
       end
-    
+
+      [buy_price, sell_price]
 
     end
 
