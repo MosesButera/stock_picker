@@ -36,15 +36,9 @@ def stock_picker(prices = nil)
         return "No profitable trades possible"    
       end
 
-      [buy_price, sell_price]
-
-    end
-
-
-
-
-
-  
+    end  
+    [buy_price, sell_price]
+    
 end
 
 
