@@ -12,7 +12,7 @@ def stock_picker(prices = nil)
     sell_price = 1
 
     (1...prices.length).map do |day|
-      
+
       current_price = prices[day]
 
       #Track the min_price or best buy_price candidate
@@ -22,6 +22,15 @@ def stock_picker(prices = nil)
         buy_price = day
       end
       
+      #Calculate profit for each day
+    
+      profit = current_price - min_price
+
+      #keep track of best profit and corresponding best sell_price candidate
+      if profit > max_profit
+        max_profit = profit
+        sell_price = day
+      end
 
 
 
