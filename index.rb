@@ -11,10 +11,13 @@ def stock_picker(prices = nil)
     buy_price = 0
     sell_price = 1
 
+    (1...prices.length).map do |day|
+      
 
 
 
 
+    end
 
 
 
