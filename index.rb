@@ -7,7 +7,7 @@ def stock_picker(prices = nil)
     #Initialize all variables
     max_profit = -Float::INFINITY
     min_price = prices[0]
-    current_price = 0
+    min_day  = 0
     buy_price = 0
     sell_price = 1
 
@@ -19,26 +19,26 @@ def stock_picker(prices = nil)
       
       if current_price < min_price
         min_price = current_price
-        buy_price = day
+        min_day = day
       end
       
       #Calculate profit for each day
-    
       profit = current_price - min_price
 
       #keep track of best profit and corresponding best sell_price candidate
       if profit > max_profit
         max_profit = profit
+        buy_price = min_day
         sell_price = day
       end
 
-      if max_profit <= 0
-        return "No profitable trades possible"    
-      end
-
-    end  
-    [buy_price, sell_price]
+    end 
     
+    if max_profit <= 0
+      return "No profitable trades possible"    
+    end
+    [buy_price, sell_price]
+
 end
 
 
