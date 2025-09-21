@@ -8,14 +8,14 @@ def stock_picker(prices = nil)
     max_profit = -Float::INFINITY
     min_price = prices[0]
     min_day  = 0
-    buy_price = 0
-    sell_price = 1
+    buy_day = 0
+    sell_day = 1
 
     (1...prices.length).map do |day|
 
       current_price = prices[day]
 
-      #Track the min_price or best buy_price candidate
+      #Track the min_price or best buy_day candidate
       
       if current_price < min_price
         min_price = current_price
@@ -25,11 +25,11 @@ def stock_picker(prices = nil)
       #Calculate profit for each day
       profit = current_price - min_price
 
-      #keep track of best profit and corresponding best sell_price candidate
+      #keep track of best profit and corresponding best sell_day candidate
       if profit > max_profit
         max_profit = profit
-        buy_price = min_day
-        sell_price = day
+        buy_day = min_day
+        sell_day = day
       end
 
     end 
@@ -37,7 +37,7 @@ def stock_picker(prices = nil)
     if max_profit <= 0
       return "No profitable trades possible"    
     end
-    [buy_price, sell_price]
+    [buy_day, sell_day]
 
 end
 
