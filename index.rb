@@ -41,14 +41,17 @@ def stock_picker(prices = nil)
 
 end
 
+stock_picker([17,3,6,9,15,8,6,1,10])
+#=> [1, 4]
 
+stock_picker([1,2,3,4,5,6])
+#=> [0, 5]
 
+stock_picker([6,5,4,3,2,1])
+#=> "No profitable trades possible"
 
-
-
-
-
-
+stock_picker()
+#=> "please enter a parameter of an array of daily prices"
 
 
 
